@@ -13,8 +13,12 @@ function getComputerChoice() {
 function getHumanChoice() {
     // returns rock, paper, or scissors depending on what the user inputs
     let choice = prompt("Rock, paper, or scissors?");
-    return choice;
+    return choice.toLowerCase();
 }
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice,computerChoice) {
+    
+}
