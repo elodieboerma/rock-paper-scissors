@@ -22,21 +22,6 @@ let computerScore = 0;
 
 function playRound(humanChoice,computerChoice) {
     let winner;
-    
-    // display winner and add one point to the winner's score
-    function announceWinner(whoWon) {
-        if (whoWon === "human") {
-            // console.log("You lose! Paper beats rock!");
-            console.log("You win!")
-            humanScore += 1;
-        } else {
-            console.log("Computer wins!")
-            computerScore += 1;
-        }
-        // display score totals
-        console.log(`Your score: ${humanScore}`);
-        console.log(`Computer's score: ${computerScore}`);
-    }
 
     // IF human and computer tie
     if (humanChoice === computerChoice) {
@@ -64,6 +49,24 @@ function playRound(humanChoice,computerChoice) {
             winner = "human";
         }
     }
+
+    // display winner and add one point to the winner's score
+    function announceWinner(whoWon) {
+        if (whoWon === "human") {
+            // console.log("You lose! Paper beats rock!");
+            console.log("You win!")
+            humanScore += 1;
+        } else {
+            console.log("Computer wins!")
+            computerScore += 1;
+        }
+        // display score totals
+        console.log(`Your score: ${humanScore}`);
+        console.log(`Computer's score: ${computerScore}`);
+    }
+
+    // call announceWinner
+    announceWinner(winner);
 }
 
 // get human choice and store to a variable
