@@ -20,52 +20,55 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(humanChoice,computerChoice) {
-    let winner;
+// run playRound 5 times, keep track of scores, and declare a winner
+function playGame() {
+    function playRound(humanChoice,computerChoice) {
+        let winner;
 
-    // IF human and computer tie
-    if (humanChoice === computerChoice) {
-        console.log("Tie! No points for anyone!");
-    // IF human choice is rock
-    } else if (humanChoice === "rock") {
-        if (computerChoice === "paper") {
-            winner = "human";
-            /*console.log("You win! Rock beats paper!");*/
-        } else {
-            winner = "human";
+        // IF human and computer tie
+        if (humanChoice === computerChoice) {
+            console.log("Tie! No points for anyone!");
+        // IF human choice is rock
+        } else if (humanChoice === "rock") {
+            if (computerChoice === "paper") {
+                winner = "human";
+                /*console.log("You win! Rock beats paper!");*/
+            } else {
+                winner = "human";
+            }
+        // IF human choice is paper
+        } else if (humanChoice === "paper") {
+            if (computerChoice === "rock") {
+                winner = "computer";
+            } else {
+                winner = "computer";
+            }
+        // IF human choice is scissors
+        } else if (humanChoice === "scissors") {
+            if (computerChoice === "rock") {
+                winner = "computer";
+            } else { 
+                winner = "human";
+            }
         }
-    // IF human choice is paper
-    } else if (humanChoice === "paper") {
-        if (computerChoice === "rock") {
-            winner = "computer";
-        } else {
-            winner = "computer";
+
+        // display winner and add one point to the winner's score
+        function announceWinner(whoWon) {
+            if (whoWon === "human") {
+                console.log("You win!")
+                humanScore += 1;
+            } else if (whoWon === "computer") {
+                console.log("Computer wins!")
+                computerScore += 1;
+            }
+            // display score totals
+            console.log(`Your score: ${humanScore}`);
+            console.log(`Computer's score: ${computerScore}`);
         }
-    // IF human choice is scissors
-    } else if (humanChoice === "scissors") {
-        if (computerChoice === "rock") {
-            winner = "computer";
-        } else { 
-            winner = "human";
-        }
+
+        // call announceWinner
+        announceWinner(winner);
     }
-
-    // display winner and add one point to the winner's score
-    function announceWinner(whoWon) {
-        if (whoWon === "human") {
-            console.log("You win!")
-            humanScore += 1;
-        } else if (whoWon === "computer") {
-            console.log("Computer wins!")
-            computerScore += 1;
-        }
-        // display score totals
-        console.log(`Your score: ${humanScore}`);
-        console.log(`Computer's score: ${computerScore}`);
-    }
-
-    // call announceWinner
-    announceWinner(winner);
 }
 
 // get human choice and store to a variable
