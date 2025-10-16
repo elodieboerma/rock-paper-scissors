@@ -57,10 +57,19 @@ function playRound(humanChoice,computerChoice) {
     } else if (humanChoice === "scissors") {
         if (computerChoice === "rock") {
             winner = "computer";
-        } else (computerChoice === "paper") {
+        } else { 
             winner = "human";
         }
     }
+
+    // get human choice and store to a variable
+    let humanSelection = getHumanChoice();
+
+    // get computer choice
+    let computerSelection = getComputerChoice();
+
+    // call playRound with human's and computer's choices
+    playRound(humanSelection,computerSelection);
 
     // display score totals
     console.log(`Your score: ${humanScore}`);
