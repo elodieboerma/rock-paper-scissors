@@ -53,10 +53,9 @@ function playRound(humanChoice,computerChoice) {
     // display winner and add one point to the winner's score
     function announceWinner(whoWon) {
         if (whoWon === "human") {
-            // console.log("You lose! Paper beats rock!");
             console.log("You win!")
             humanScore += 1;
-        } else {
+        } else if (whoWon === "computer") {
             console.log("Computer wins!")
             computerScore += 1;
         }
