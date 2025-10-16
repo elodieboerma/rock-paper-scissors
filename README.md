@@ -1,1 +1,1 @@
-# rock-paper-scissors
+This is the classic rock, paper, scissors game, but virtual. This is my first JavaScript project with The Odin Project.
