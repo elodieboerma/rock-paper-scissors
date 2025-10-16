@@ -21,33 +21,44 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice,computerChoice) {
+    let winner;
+    
+    // displays who won and adds one point to the winner's score
+    function announceWinner(whoWon) {
+        if (whoWon === "human") {
+            // console.log("You lose! Paper beats rock!");
+            console.log("You win!")
+            humanScore += 1;
+        } else {
+            console.log("Computer wins!")
+            computerScore += 1;
+        }
+    }
+
     // IF human and computer tie
     if (humanChoice === computerChoice) {
         console.log("Tie! No points for anyone!");
     // IF human choice is rock
     } else if (humanChoice === "rock") {
         if (computerChoice === "paper") {
-            console.log("You win! Rock beats paper!");
+            winner = "human";
+            /*console.log("You win! Rock beats paper!");*/
         } else {
-            console.log("You win! Rock beats scissors!");
+            winner = "human";
         }
     // IF human choice is paper
     } else if (humanChoice === "paper") {
         if (computerChoice === "rock") {
-            console.log("You lose! Rock beats paper!");
+            winner = "computer";
         } else {
-            console.log("You lose! Scissors beat paper!");
+            winner = "computer";
         }
     // IF human choice is scissors
     } else if (humanChoice === "scissors") {
         if (computerChoice === "rock") {
-            console.log("You lose! Rock beats scissors!");
+            winner = "computer";
         } else (computerChoice === "paper") {
-            console.log("You win! Scissors beat paper!");
+            winner = "human";
         }
     }
-    // based on winner - store winner to a variable
-        //console.log message based on winner, ie:
-            // console.log("You lose! Paper beats rock!");
-        // ++ humanScore or computerScore based on round winner
 }
