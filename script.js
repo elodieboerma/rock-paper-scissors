@@ -33,6 +33,9 @@ function playRound(humanChoice,computerChoice) {
             console.log("Computer wins!")
             computerScore += 1;
         }
+        // display score totals
+        console.log(`Your score: ${humanScore}`);
+        console.log(`Computer's score: ${computerScore}`);
     }
 
     // IF human and computer tie
@@ -61,10 +64,6 @@ function playRound(humanChoice,computerChoice) {
             winner = "human";
         }
     }
-
-    // display score totals
-    console.log(`Your score: ${humanScore}`);
-    console.log(`Computer's score: ${computerScore}`);
 }
 
 // get human choice and store to a variable
@@ -73,7 +72,7 @@ console.log(humanSelection);
 
 // get computer choice
 let computerSelection = getComputerChoice();
-console.log(humanSelection);
+console.log(computerSelection);
 
 // call playRound with human's and computer's choices
 playRound(humanSelection,computerSelection);
