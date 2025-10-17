@@ -67,10 +67,20 @@ function playGame() {
 
         // call announceWinner
         announceWinner(winner);
+        
+        // determine which of the scores is greater
+        // return overall winner & their score (only use these values in 5th round of for-loop)
+        if (humanScore === computerScore) {
+            return "tie";
+        } else if (humanScore > computerScore) {
+            return `human ${humanScore}`;
+        } else {
+            return `computer ${computerScore}`;
+        }
     }
 
     // loop to play 5 rounds
-    for (i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 5; i++) {
         // print round number, make sure it's easily readable
         console.log('ROUND ${i}');
 
@@ -83,8 +93,32 @@ function playGame() {
         console.log("Computer choice: " + computerSelection);
 
         // call playRound with human's and computer's choices
-        playRound(humanSelection,computerSelection);
+        // IF it's the fifth (final) round, store the value returned by playRound to a variable
+        if (i === 5) {
+            let finalScores = playRound(humanSelection,computerSelection);
+        } else {
+            playRound(humanSelection,computerSelection);
+        }
     }
+
+    // declare final winner
+    function declareWinner(){
+        // log message with overall winner based on return value from playRound()
+        if (finalScores === "tie") {
+            console.log("It's a tie! I think I've met my match!");
+        } else {
+            // separate score from winner name (in return value from playRound())
+            const num = [];
+            num = finalScores.split(" ");
+            if (num[0] === "human") {
+                console.log(`You win! Score: ${num[1]}`);
+            } else {
+                console.log(`You lose! Bet you'll never beat me!`);
+            }
+        }
+    }
+
+    declareWinner();
 }
 
 // main
