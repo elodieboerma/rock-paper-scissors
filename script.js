@@ -55,29 +55,37 @@ function playGame() {
         // display winner and add one point to the winner's score
         function announceWinner(whoWon) {
             if (whoWon === "human") {
-                console.log("You win!")
+                console.log("You win!");
                 humanScore += 1;
             } else if (whoWon === "computer") {
-                console.log("Computer wins!")
+                console.log("Computer wins!");
                 computerScore += 1;
             }
             // display score totals
-            console.log(`Your score: ${humanScore}`);
-            console.log(`Computer's score: ${computerScore}`);
+            console.log(`Your score - computer score: ${humanScore} - ${computerScore}`);
         }
 
         // call announceWinner
         announceWinner(winner);
     }
+
+    // loop to play 5 rounds
+    for (i = 1; i <= 5; i++) {
+        // print round number, make sure it's easily readable
+        console.log('ROUND ${i}');
+
+        // get human choice and store to a variable
+        let humanSelection = getHumanChoice();
+        console.log("Your choice: " + humanSelection);
+
+        // get computer choice
+        let computerSelection = getComputerChoice();
+        console.log("Computer choice: " + computerSelection);
+
+        // call playRound with human's and computer's choices
+        playRound(humanSelection,computerSelection);
+    }
 }
 
-// get human choice and store to a variable
-let humanSelection = getHumanChoice();
-console.log(humanSelection);
-
-// get computer choice
-let computerSelection = getComputerChoice();
-console.log(computerSelection);
-
-// call playRound with human's and computer's choices
-playRound(humanSelection,computerSelection);
+// main
+playGame();
