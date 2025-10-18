@@ -79,6 +79,8 @@ function playGame() {
         }
     }
 
+    let finalScores;
+    
     // loop to play 5 rounds
     for (let i = 1; i <= 5; i++) {
         // print round number, make sure it's easily readable
@@ -95,7 +97,7 @@ function playGame() {
         // call playRound with human's and computer's choices
         // IF it's the fifth (final) round, store the value returned by playRound to a variable
         if (i === 5) {
-            let finalScores = playRound(humanSelection,computerSelection);
+            finalScores = playRound(humanSelection,computerSelection);
         } else {
             playRound(humanSelection,computerSelection);
         }
