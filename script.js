@@ -80,7 +80,7 @@ function playGame() {
     }
 
     let finalScores;
-    
+
     // loop to play 5 rounds
     for (let i = 1; i <= 5; i++) {
         // print round number, make sure it's easily readable
@@ -110,8 +110,7 @@ function playGame() {
             console.log("It's a tie! I think I've met my match!");
         } else {
             // separate score from winner name (in return value from playRound())
-            const num = [];
-            num = finalScores.split(" ");
+            const num = finalScores.split(" ");
             if (num[0] === "human") {
                 console.log(`You win! Score: ${num[1]}`);
             } else {
