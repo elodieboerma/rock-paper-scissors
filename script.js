@@ -62,7 +62,7 @@ function playGame() {
                 computerScore += 1;
             }
             // display score totals
-            console.log(`Your score - computer score: ${humanScore} - ${computerScore}`);
+            console.log(`-> ${humanScore} - ${computerScore}`);
         }
 
         // call announceWinner
