@@ -82,7 +82,7 @@ function playGame() {
     // loop to play 5 rounds
     for (let i = 1; i <= 5; i++) {
         // print round number, make sure it's easily readable
-        console.log('ROUND ${i}');
+        console.log(`ROUND ${i}`);
 
         // get human choice and store to a variable
         let humanSelection = getHumanChoice();
